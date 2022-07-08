@@ -7,11 +7,9 @@ var options = {
     debug: true
 }
 
-app.get("/", (req,res)=>{
-    res.send("hello")
-})
+
 var server = require('http').createServer(app);
 
 app.use('/peerjs', ExpressPeerServer(server, options));
 
-server.listen(9000);
+server.listen(process.env.PORT || 9000);
